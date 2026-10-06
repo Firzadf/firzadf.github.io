@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #0b0d10;
+  --color-text: #ffffff;
+  --color-text-muted: #9ca3af;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-sans: 'Instrument Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Completely hide default OS mouse cursor on desktop so only Cosmic Cursor is visible */
+@media (min-width: 768px) {
+  html, body, a, button, input, textarea, select, [role="button"], [data-cursor="pointer"] {
+    cursor: none !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  overflow-x: hidden;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: #aea8fe;
+  color: #0b0d10;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0d10;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f242d;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #343b49;
+}
+
+/* Kristian Ulrych Style Typography Helpers */
+.font-display {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #EBE1B0 -86.53%, #AEA8FE 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-cosmic {
+  background: linear-gradient(135deg, #FFF 0%, #AEA8FE 50%, #FF6322 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.italic-highlight {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 300;
+  background: linear-gradient(90deg, #EBE1B0 -86.53%, #AEA8FE 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: underline;
+  text-decoration-color: rgba(174, 168, 254, 0.4);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 8px;
+}
+
+.label-mono {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #9ca3af;
+}
+
+/* Image Skeleton & Glow effects */
+.img-skeleton {
+  background: linear-gradient(110deg, #13161c 8%, #1c212b 18%, #13161c 33%);
+  background-size: 200% 100%;
+  animation: shine 1.8s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}
