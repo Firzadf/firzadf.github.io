@@ -31,7 +31,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-          className="relative z-10 w-full max-w-3xl max-h-[calc(100dvh-1.5rem)] sm:max-h-[calc(100dvh-2rem)] md:max-h-[85vh] overflow-y-auto rounded-2xl border border-white/10 bg-[#1B1E23] p-4 sm:p-6 md:p-8 shadow-2xl text-white scrollbar-thin"
+          className="relative z-950 w-full max-w-3xl max-h-[calc(100dvh-1.5rem)] sm:max-h-[calc(100dvh-2rem)] md:max-h-[85vh] overflow-y-auto rounded-2xl border border-white/10 bg-[#1B1E23] p-4 pt-12 sm:p-6 sm:pt-16 md:p-8 md:pt-20 shadow-2xl text-white scrollbar-thin"
         >
           {/* Close Button - positioned inside the container flow to avoid overlap issues */}
           <div className="flex justify-end mb-2">
