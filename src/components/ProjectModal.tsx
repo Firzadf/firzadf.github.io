@@ -15,7 +15,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8">
+      <div className="fixed inset-0 z-[900] flex items-center justify-center p-3 sm:p-4 md:p-8">
         {/* Backdrop */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -31,19 +31,19 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-          className="relative z-10 w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl border border-white/10 bg-[#1B1E23] p-6 md:p-8 shadow-2xl text-white scrollbar-thin"
+          className="relative z-10 w-full max-w-4xl max-h-[calc(100dvh-1.5rem)] sm:max-h-[calc(100dvh-2rem)] md:max-h-[90vh] overflow-y-auto rounded-2xl border border-white/10 bg-[#1B1E23] p-4 pt-16 sm:p-5 sm:pt-16 md:p-8 md:pt-20 shadow-2xl text-white scrollbar-thin"
         >
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-6 right-6 p-2 rounded-full border border-white/10 bg-white/5 text-gray-400 hover:text-white hover:bg-white/10 transition-colors"
+            className="absolute top-4 right-4 z-20 p-2 rounded-full border border-white/10 bg-[#1B1E23]/95 text-gray-300 shadow-lg hover:text-white hover:bg-white/10 transition-colors md:top-6 md:right-6"
             data-cursor="pointer"
           >
             <X className="w-5 h-5" />
           </button>
 
           {/* Media Header */}
-          <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-black/40 mb-6 border border-white/10">
+          <div className="relative w-full max-h-[50vh] md:max-h-[45vh] overflow-hidden rounded-xl bg-black/40 mb-5 md:mb-6 border border-white/10">
             <img
               src={project.image}
               alt={project.title}
