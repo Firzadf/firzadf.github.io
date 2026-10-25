@@ -2,13 +2,12 @@
 
 import React from 'react';
 import { ProjectProvider, useProjects } from '@/context/ProjectContext';
-import { LoadingScreen } from '@/components/LoadingScreen';
-import { CosmicCursor } from '@/components/CosmicCursor';
 import { CosmicBackground } from '@/components/CosmicBackground';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { PageTransition } from '@/components/PageTransition';
 import { AboutEducation } from '@/components/AboutEducation';
+import { Certificates } from '@/components/Certificates';
 import { Code2, Cpu, FileCode2, Layers, CheckCircle2, Sparkles, Terminal, Flame, Zap } from 'lucide-react';
 
 function AboutContent() {
@@ -17,13 +16,13 @@ function AboutContent() {
   const jsSkills = [
     {
       title: 'Modern JavaScript (ES6+)',
-      description: 'Deep mastery of ES6+ syntax, Arrow functions, Destructuring, Spread/Rest operators, ES Modules, and clean functional programming patterns.',
+      description: 'Solid grasp of ES6+ syntax, Arrow functions, Destructuring, Spread/Rest operators, ES Modules, and clean functional programming patterns.',
       icon: <FileCode2 className="w-5 h-5 text-amber-300" />,
       tag: 'LANGUAGE CORE',
     },
     {
       title: 'Async JS & Web APIs',
-      description: 'Expertise in Promises, Async/Await, Fetch API, Axios, WebSockets, RESTful endpoints, and asynchronous event-driven JavaScript architecture.',
+      description: 'Comfortable with Promises, Async/Await, Fetch API, Axios, WebSockets, RESTful endpoints, and asynchronous event-driven JavaScript architecture.',
       icon: <Zap className="w-5 h-5 text-purple-400" />,
       tag: 'ASYNC & APIS',
     },
@@ -44,9 +43,8 @@ function AboutContent() {
   return (
     <div className="relative min-h-screen bg-[#0B0D10] text-white selection:bg-[#AEA8FE] selection:text-[#0B0D10] overflow-x-hidden">
       <CosmicBackground />
-      <CosmicCursor />
       <Header />
-      <main className="relative z-10 pt-28 pb-20">
+      <main id="main" className="relative z-10 pt-28 pb-20">
         <PageTransition>
           {/* Header Banner */}
           <div className="px-5 pt-12 pb-12 md:px-10 max-w-[89.5rem] mx-auto border-b border-white/10">
@@ -112,14 +110,14 @@ function AboutContent() {
                   'TypeScript',
                   'React.js 19',
                   'Next.js 15',
-                  'Node.js',
-                  'Express.js',
                   'Tailwind CSS',
                   'HTML5 & CSS3',
                   'PHP / Laravel',
                   'MySQL',
-                  'PostgreSQL',
-                  'REST APIs',
+                  'REST / JSON-RPC',
+                  'Solidity & EVM',
+                  'Substrate / WebSocket',
+                  'Vitest',
                   'Figma UI/UX',
                   'Git & GitHub',
                 ].map((stack, sIdx) => (
@@ -137,6 +135,7 @@ function AboutContent() {
 
           {/* Academic Background Component */}
           <AboutEducation />
+          <Certificates />
         </PageTransition>
       </main>
       <Footer />
@@ -147,7 +146,6 @@ function AboutContent() {
 export default function AboutPage() {
   return (
     <ProjectProvider>
-      <LoadingScreen />
       <AboutContent />
     </ProjectProvider>
   );

@@ -1,0 +1,133 @@
+{
+  "projects": [
+    {
+      "id": "nodescope",
+      "title": "NodeScope",
+      "category": "web3",
+      "year": "2026",
+      "featured": true,
+      "role": "Solo builder",
+      "event": "Portaldot Hacker House 2026 — Node Operations & Tooling",
+      "description": "A read-only diagnostics toolkit for Portaldot V3 nodes. Records health checks as timestamped snapshots, diffs them deterministically, and exports a verifiable report — so node health is something you can prove, not just claim.",
+      "longDescription": "NodeScope probes a Portaldot V3 node over EVM JSON-RPC and Substrate WSS, combines both into a single health verdict, and stores each run as a timestamped snapshot. Snapshots can be compared with a deterministic diff, exported as a versioned diagnostic report, and verified later by SHA-256 hash, with an optional on-chain anchor on the Portaldot V3 testnet. It needs no wallet and never fabricates values: anything it can't measure is labeled as such.",
+      "highlights": [
+        "EVM JSON-RPC + Substrate WSS combined verdict",
+        "Deterministic snapshot diff & trend view",
+        "SHA-256 verifiable report export",
+        "On-chain registry on Portaldot V3 testnet",
+        "320 automated tests"
+      ],
+      "image": "/images/projects/nodescope.jpg",
+      "gallery": [
+        "/images/projects/nodescope-app.jpg"
+      ],
+      "tags": [
+        "TypeScript",
+        "React",
+        "EVM JSON-RPC",
+        "Substrate",
+        "Solidity",
+        "Vitest",
+        "Vercel"
+      ],
+      "demoUrl": "https://nodescope.vercel.app",
+      "githubUrl": "https://github.com/Firzadf/nodescope",
+      "extraUrl": "https://dorahacks.io/build/50146",
+      "extraLabel": "DoraHacks"
+    },
+    {
+      "id": "koloni-cafe-website",
+      "title": "Koloni Cafe — Website",
+      "category": "web",
+      "year": "2026",
+      "featured": false,
+      "description": "A modern and visually appealing cafe website built with Next.js and TypeScript. Features elegant UI design, smooth animations, and responsive layout for showcasing the cafe's menu, ambiance, and brand identity.",
+      "longDescription": "Koloni Cafe is a professionally crafted website designed to elevate the online presence of a local cafe. Built with Next.js and TypeScript for robust type safety, styled with SCSS for maintainable and modular CSS architecture. The site features responsive design across all devices, smooth page transitions, and an inviting visual aesthetic that matches the cafe's warm atmosphere. Deployed live on Vercel for optimal performance.",
+      "image": "/images/projects/koloni-cafe.jpg",
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "SCSS",
+        "HTML",
+        "CSS",
+        "Vercel"
+      ],
+      "demoUrl": "https://koloni-cafe.vercel.app",
+      "githubUrl": "https://github.com/Firzadf/koloni-cafe"
+    },
+    {
+      "id": "duta-airdrop-platform",
+      "title": "Duta Airdrop Platform",
+      "category": "web3",
+      "year": "2025",
+      "featured": false,
+      "description": "A crypto airdrop information and management platform built with JavaScript. Features real-time data updates, modern UI, and responsive design deployed on Vercel.",
+      "longDescription": "Duta Airdrop is a web-based platform designed to aggregate and manage cryptocurrency airdrop opportunities. Built primarily with JavaScript and modern CSS for a polished user experience. The platform features a clean, intuitive interface for browsing active airdrops, tracking participation status, and receiving updates. Deployed on Vercel for fast global access and reliable uptime.",
+      "image": "/images/projects/duta-airdrop.jpg",
+      "tags": [
+        "JavaScript",
+        "CSS",
+        "HTML",
+        "Vercel",
+        "Web3"
+      ],
+      "demoUrl": "https://duta-airdrop-bmvb.vercel.app",
+      "githubUrl": "https://github.com/Firzadf/duta-airdrop"
+    },
+    {
+      "id": "posyandu-admin-dashboard",
+      "title": "Posyandu Admin Dashboard",
+      "category": "fullstack",
+      "year": "2025",
+      "featured": false,
+      "description": "A comprehensive community health center (Posyandu) administration system built with Laravel PHP. Manages patient records, health monitoring data, and community health reporting.",
+      "longDescription": "A full-stack web application designed to digitalize and streamline the administrative processes of Posyandu (Pos Pelayanan Terpadu) — Indonesia's community-based health service centers. Built with Laravel PHP framework and Blade templating engine, this system provides complete CRUD operations for managing patient data, health check records, vaccination schedules, and nutritional monitoring. Features role-based authentication, data export capabilities, and a clean admin dashboard interface.",
+      "image": "",
+      "tags": [
+        "Laravel",
+        "PHP",
+        "Blade",
+        "MySQL",
+        "CSS",
+        "JavaScript"
+      ],
+      "githubUrl": "https://github.com/Firzadf/posyandu"
+    },
+    {
+      "id": "inventory-management-system",
+      "title": "Inventory Management System",
+      "category": "fullstack",
+      "year": "2025",
+      "featured": false,
+      "description": "A robust inventory management system built with Laravel 10. Features product tracking, stock management, supplier records, and comprehensive reporting dashboard with Docker support.",
+      "longDescription": "An enterprise-grade inventory management system engineered with Laravel 10 framework. The application provides complete inventory lifecycle management including product cataloging, stock level monitoring, purchase order tracking, and automated low-stock alerts. Built with a modern tech stack featuring Blade templating for the frontend, JavaScript for interactive UI elements, and SCSS for styling. Containerized with Docker for consistent deployment environments. Includes comprehensive reporting dashboards with data visualization.",
+      "image": "",
+      "tags": [
+        "Laravel 10",
+        "PHP",
+        "JavaScript",
+        "Blade",
+        "Docker",
+        "CSS"
+      ],
+      "githubUrl": "https://github.com/Firzadf/inventory-management-system"
+    },
+    {
+      "id": "grassrdp-automation",
+      "title": "GrassRDP Automation",
+      "category": "web3",
+      "year": "2024",
+      "featured": false,
+      "description": "An automation script project for Grass network node management via RDP environments. Streamlines setup and operational tasks for efficient node deployment.",
+      "longDescription": "GrassRDP is a utility project focused on automating the setup and management of Grass network nodes within Remote Desktop Protocol (RDP) environments. The project provides streamlined scripts and configurations to simplify node deployment, monitoring, and maintenance tasks. Designed for users looking to efficiently manage their Grass network participation with minimal manual intervention.",
+      "image": "",
+      "tags": [
+        "Automation",
+        "Scripting",
+        "RDP",
+        "DevOps"
+      ],
+      "githubUrl": "https://github.com/Firzadf/GrassRDP"
+    }
+  ]
+}

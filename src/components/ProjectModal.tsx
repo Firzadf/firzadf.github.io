@@ -1,9 +1,10 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ExternalLink, Github, Calendar, Tag, UserCheck } from 'lucide-react';
 import { Project } from '@/types/project';
+import { ProjectCover } from './ProjectCover';
 
 interface ProjectModalProps {
   project: Project | null;
@@ -11,6 +12,18 @@ interface ProjectModalProps {
 }
 
 export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
+  useEffect(() => {
+    if (!project) return;
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose();
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', onKey);
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      document.body.style.overflow = prev;
+    };
+  }, [project, onClose]);
+
   if (!project) return null;
 
   return (
@@ -27,16 +40,22 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
         {/* Modal Dialog */}
         <motion.div
+          role="dialog"
+          aria-modal="true"
+          aria-label={project.title}
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-          className="relative z-950 w-full max-w-3xl max-h-[calc(100dvh-1.5rem)] sm:max-h-[calc(100dvh-2rem)] md:max-h-[85vh] overflow-y-auto rounded-2xl border border-white/10 bg-[#1B1E23] p-4 pt-12 sm:p-6 sm:pt-16 md:p-8 md:pt-20 shadow-2xl text-white scrollbar-thin"
+          className="relative z-950 w-full max-w-3xl max-h-[calc(100dvh-1.5rem)] sm:max-h-[calc(100dvh-2rem)] md:max-h-[85vh] overflow-y-auto rounded-2xl border border-white/10 bg-[#1B1E23] p-4 sm:p-6 md:p-8 shadow-2xl text-white scrollbar-thin"
         >
           {/* Close Button - positioned inside the container flow to avoid overlap issues */}
-          <div className="flex justify-end mb-2">
+          <div className="sticky top-0 z-10 flex justify-end -mb-12 pointer-events-none">
             <button
               onClick={onClose}
+              autoFocus
+              style={{ pointerEvents: 'auto' }}
+              aria-label="Close case study"
               className="p-2 rounded-full border border-white/10 bg-[#1B1E23]/95 text-gray-300 shadow-lg hover:text-white hover:bg-white/10 transition-colors"
               data-cursor="pointer"
             >
@@ -45,12 +64,8 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           </div>
 
           {/* Media Header */}
-          <div className="relative w-full max-h-[50vh] md:max-h-[45vh] overflow-hidden rounded-xl bg-black/40 mb-5 md:mb-6 border border-white/10">
-            <img
-              src={project.image}
-              alt={project.title}
-              className="h-full w-full object-cover"
-            />
+          <div className="relative w-full aspect-[16/10] max-h-[50vh] md:max-h-[45vh] overflow-hidden rounded-xl bg-black/40 mb-5 md:mb-6 border border-white/10">
+            <ProjectCover project={project} eager />
             <div className="absolute top-4 left-4 flex gap-2">
               <span className="px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-black/70 text-purple-300 border border-purple-500/30 backdrop-blur-md">
                 {project.category}
@@ -81,9 +96,29 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               </div>
             </div>
 
+            {project.event && <p className="text-sm font-mono text-amber-300/90">{project.event}</p>}
+
             <p className="text-gray-300 leading-relaxed text-base">
               {project.longDescription || project.description}
             </p>
+
+            {project.highlights && project.highlights.length > 0 && (
+              <ul className="grid gap-2 sm:grid-cols-2">
+                {project.highlights.map((h) => (
+                  <li key={h} className="flex gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2.5 text-sm text-gray-200">
+                    <span className="text-violet-300">✓</span>{h}
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            {project.gallery && project.gallery.length > 0 && (
+              <div className="grid gap-3 sm:grid-cols-2">
+                {project.gallery.map((g) => (
+                  <img key={g} src={g} alt={`${project.title} screenshot`} loading="lazy" className="w-full rounded-xl border border-white/10 object-cover" />
+                ))}
+              </div>
+            )}
 
             {/* Tech Stack Pills */}
             <div>
@@ -124,6 +159,16 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                   data-cursor="pointer"
                 >
                   <Github className="w-4 h-4" /> Repository
+                </a>
+              )}
+              {project.extraUrl && (
+                <a
+                  href={project.extraUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/20 bg-white/5 text-white font-semibold text-xs uppercase tracking-wider transition-all hover:bg-white/10"
+                >
+                  <ExternalLink className="w-4 h-4" /> {project.extraLabel || 'More'}
                 </a>
               )}
             </div>

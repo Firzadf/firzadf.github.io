@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { useProjects } from '@/context/ProjectContext';
+import { useProjects, whatsappLink, prettyUrl } from '@/context/ProjectContext';
 import { Mail, MessageSquare, Github, Linkedin, ArrowUpRight } from 'lucide-react';
 
 export const Contact: React.FC = () => {
@@ -27,7 +27,7 @@ export const Contact: React.FC = () => {
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full lg:w-auto">
           <a
-            href={`https://api.whatsapp.com/send?phone=${personalInfo.whatsapp}&text=Hello%20Firza!`}
+            href={whatsappLink(personalInfo.whatsapp)}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex h-14 items-center justify-center gap-2 rounded-full border border-white bg-white px-8 text-sm font-semibold uppercase tracking-wider text-black transition-all hover:bg-purple-300 active:scale-95"
@@ -74,7 +74,7 @@ export const Contact: React.FC = () => {
             <ArrowUpRight className="w-4 h-4 text-gray-500 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
           </div>
           <span className="text-xs uppercase tracking-widest text-gray-400 block mb-1">GitHub Repositories</span>
-          <span className="text-lg font-serif text-white block">github.com/firzadf</span>
+          <span className="text-lg font-serif text-white block truncate">{prettyUrl(personalInfo.github)}</span>
         </a>
 
         <a
@@ -88,7 +88,7 @@ export const Contact: React.FC = () => {
             <ArrowUpRight className="w-4 h-4 text-gray-500 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
           </div>
           <span className="text-xs uppercase tracking-widest text-gray-400 block mb-1">LinkedIn Network</span>
-          <span className="text-lg font-serif text-white block">linkedin.com/in/firzadf</span>
+          <span className="text-lg font-serif text-white block truncate">{prettyUrl(personalInfo.linkedin)}</span>
         </a>
       </div>
     </section>

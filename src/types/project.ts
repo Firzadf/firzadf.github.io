@@ -1,19 +1,23 @@
-export type ProjectCategory = 'all' | 'web' | 'design' | 'fullstack';
+export type ProjectCategory = 'all' | 'web3' | 'web' | 'fullstack';
 
 export interface Project {
   id: string;
   title: string;
-  category: 'web' | 'design' | 'fullstack';
+  category: 'web3' | 'web' | 'fullstack';
   description: string;
   longDescription?: string;
-  image: string;
+  highlights?: string[];
+  image?: string;
+  gallery?: string[];
   tags: string[];
   year: string;
   featured: boolean;
   demoUrl?: string;
   githubUrl?: string;
-  client?: string;
+  extraUrl?: string;
+  extraLabel?: string;
   role?: string;
+  event?: string;
 }
 
 export interface PersonalInfo {

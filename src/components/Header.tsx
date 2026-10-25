@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
-import { useProjects } from '@/context/ProjectContext';
+import { useProjects, whatsappLink, prettyUrl } from '@/context/ProjectContext';
 
 export const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -60,7 +60,7 @@ export const Header: React.FC = () => {
 
           {/* Get in Touch CTA */}
           <a
-            href={`https://api.whatsapp.com/send?phone=${personalInfo.whatsapp}&text=Hello%20Firza!`}
+            href={whatsappLink(personalInfo.whatsapp)}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex h-9 items-center gap-1 rounded-full border border-white bg-white px-4 text-xs font-semibold uppercase tracking-wider text-black transition-all duration-200 hover:bg-transparent hover:text-white active:scale-95 shadow-[0_0_15px_rgba(255,255,255,0.2)]"
@@ -129,7 +129,7 @@ export const Header: React.FC = () => {
                 {personalInfo.email}
               </a>
               <a
-                href={`https://api.whatsapp.com/send?phone=${personalInfo.whatsapp}`}
+                href={whatsappLink(personalInfo.whatsapp)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex h-12 items-center justify-center rounded-full border border-white bg-white px-6 text-sm font-semibold uppercase tracking-wider text-black"

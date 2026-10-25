@@ -1,9 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ProjectProvider, useProjects } from '@/context/ProjectContext';
-import { LoadingScreen } from '@/components/LoadingScreen';
-import { CosmicCursor } from '@/components/CosmicCursor';
+import { ProjectProvider, useProjects, whatsappLink } from '@/context/ProjectContext';
 import { CosmicBackground } from '@/components/CosmicBackground';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
@@ -28,9 +26,8 @@ function ContactContent() {
   return (
     <div className="relative min-h-screen bg-[#0B0D10] text-white selection:bg-[#AEA8FE] selection:text-[#0B0D10] overflow-x-hidden">
       <CosmicBackground />
-      <CosmicCursor />
       <Header />
-      <main className="relative z-10 pt-28 pb-20">
+      <main id="main" className="relative z-10 pt-28 pb-20">
         <PageTransition>
           <div className="px-5 pt-12 pb-16 md:px-10 max-w-[89.5rem] mx-auto">
             {/* Header Section */}
@@ -62,14 +59,14 @@ function ContactContent() {
                         WhatsApp (Direct Chat)
                       </span>
                       <a
-                        href={`https://api.whatsapp.com/send?phone=${personalInfo.whatsapp}&text=Hello%20Firza!`}
+                        href={whatsappLink(personalInfo.whatsapp)}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-lg text-emerald-400 font-medium hover:underline"
                         data-cursor="pointer"
                       >
                         <MessageSquare className="w-4 h-4" />
-                        +{personalInfo.whatsapp}
+                        +{personalInfo.whatsapp.replace(/\D/g, '')}
                         <ArrowUpRight className="w-4 h-4" />
                       </a>
                     </div>
@@ -203,7 +200,6 @@ function ContactContent() {
 export default function ContactPage() {
   return (
     <ProjectProvider>
-      <LoadingScreen />
       <ContactContent />
     </ProjectProvider>
   );

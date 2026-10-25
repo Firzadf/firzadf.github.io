@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap, Award, BookOpen, Sparkles, CheckCircle2, Code2, Server, Layout } from 'lucide-react';
+import { GraduationCap, Award, BookOpen, Sparkles, Code2, Server, Layout, Boxes } from 'lucide-react';
 
 export const AboutEducation: React.FC = () => {
   return (
@@ -24,7 +24,7 @@ export const AboutEducation: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.05 }}
           transition={{ duration: 0.6 }}
           className="lg:col-span-6 relative rounded-3xl overflow-hidden border border-white/10 bg-[#13161c] group shadow-2xl"
         >
@@ -55,7 +55,7 @@ export const AboutEducation: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.05 }}
           transition={{ duration: 0.6, delay: 0.15 }}
           className="lg:col-span-6 relative rounded-3xl overflow-hidden border border-white/10 bg-[#13161c] group shadow-2xl"
         >
@@ -107,7 +107,7 @@ export const AboutEducation: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.05 }}
               transition={{ duration: 0.5 }}
               className="relative group"
             >
@@ -130,7 +130,7 @@ export const AboutEducation: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.05 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               className="relative group"
             >
@@ -161,7 +161,7 @@ export const AboutEducation: React.FC = () => {
             <div>
               <span className="label-mono block">Capabilities</span>
               <h3 className="text-2xl font-serif font-light text-white">
-                Core Engineering Services
+                What I build
               </h3>
             </div>
           </div>
@@ -169,32 +169,35 @@ export const AboutEducation: React.FC = () => {
           <div className="space-y-4">
             <div className="p-5 rounded-2xl border border-white/10 bg-[#13161c]/80 hover:border-purple-500/30 transition-colors">
               <div className="flex items-center gap-3 mb-2">
-                <Layout className="w-4 h-4 text-purple-400" />
-                <h4 className="text-sm font-semibold text-white">Frontend &amp; Interactive Web UI</h4>
+                <Boxes className="w-4 h-4 text-violet-400" />
+                <h4 className="text-sm font-semibold text-white">Web3 Developer Tooling</h4>
               </div>
-              <p className="text-xs text-gray-400 leading-relaxed font-sans">
-                Building fast, responsive web apps using React 19, Next.js 15, Tailwind CSS, and Framer Motion micro-interactions.
-              </p>
+              <p className="text-[13px] text-gray-400 leading-relaxed font-sans">EVM JSON-RPC, Substrate/WSS, Solidity, and verifiable reports.</p>
+              <p className="mt-2 text-[11px] font-mono text-gray-500">Proof: NodeScope</p>
             </div>
-
+            <div className="p-5 rounded-2xl border border-white/10 bg-[#13161c]/80 hover:border-purple-500/30 transition-colors">
+              <div className="flex items-center gap-3 mb-2">
+                <Layout className="w-4 h-4 text-purple-400" />
+                <h4 className="text-sm font-semibold text-white">Frontend &amp; Web UI</h4>
+              </div>
+              <p className="text-[13px] text-gray-400 leading-relaxed font-sans">React, Next.js, TypeScript, Tailwind, and responsive, accessible interfaces.</p>
+              <p className="mt-2 text-[11px] font-mono text-gray-500">Proof: NodeScope · Koloni Cafe · this site</p>
+            </div>
             <div className="p-5 rounded-2xl border border-white/10 bg-[#13161c]/80 hover:border-purple-500/30 transition-colors">
               <div className="flex items-center gap-3 mb-2">
                 <Server className="w-4 h-4 text-emerald-400" />
-                <h4 className="text-sm font-semibold text-white">Backend Systems &amp; REST/GraphQL APIs</h4>
+                <h4 className="text-sm font-semibold text-white">Backend &amp; Databases</h4>
               </div>
-              <p className="text-xs text-gray-400 leading-relaxed font-sans">
-                Designing scalable backend APIs using Node.js, Express, Laravel, PostgreSQL, and MySQL databases.
-              </p>
+              <p className="text-[13px] text-gray-400 leading-relaxed font-sans">Laravel, PHP, MySQL, auth and admin dashboards with full CRUD.</p>
+              <p className="mt-2 text-[11px] font-mono text-gray-500">Proof: Posyandu Dashboard</p>
             </div>
-
             <div className="p-5 rounded-2xl border border-white/10 bg-[#13161c]/80 hover:border-purple-500/30 transition-colors">
               <div className="flex items-center gap-3 mb-2">
                 <Code2 className="w-4 h-4 text-amber-400" />
-                <h4 className="text-sm font-semibold text-white">JavaScript &amp; TypeScript Ecosystem</h4>
+                <h4 className="text-sm font-semibold text-white">Automation &amp; DevOps</h4>
               </div>
-              <p className="text-xs text-gray-400 leading-relaxed font-sans">
-                Deep understanding of ES6+, Async/Await, Web APIs, DOM manipulation, and strong type safety with TypeScript.
-              </p>
+              <p className="text-[13px] text-gray-400 leading-relaxed font-sans">Node setup scripts, Vercel and GitHub Actions deployments.</p>
+              <p className="mt-2 text-[11px] font-mono text-gray-500">Proof: GrassRDP · CI for this site</p>
             </div>
           </div>
         </div>

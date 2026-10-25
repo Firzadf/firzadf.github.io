@@ -1,0 +1,83 @@
+# Admin for firzadf.github.io — sign in with GitHub (Personal Access Token).
+# Only accounts with write access to the repo can save. Every save is a commit,
+# and the "Deploy Next.js Portfolio to GitHub Pages" workflow republishes the site (~1–2 min).
+backend:
+  name: github
+  repo: Firzadf/firzadf.github.io
+  branch: main
+  commit_messages:
+    update: 'content: update {{slug}} via admin'
+    uploadMedia: 'content: upload {{path}}'
+
+media_folder: public/images/uploads
+public_folder: /images/uploads
+
+site_url: https://firzadf.github.io
+display_url: https://firzadf.github.io
+
+collections:
+  - name: content
+    label: Site content
+    editor: { preview: false }
+    files:
+      - name: profile
+        label: Profile & contact
+        file: src/content/profile.json
+        fields:
+          - { name: name, label: Full name, widget: string }
+          - { name: title, label: Title, widget: string }
+          - { name: location, label: Location, widget: string }
+          - { name: status, label: Availability, widget: string }
+          - { name: bio, label: Short bio (shown in hero), widget: text }
+          - { name: email, label: Email, widget: string }
+          - { name: whatsapp, label: 'WhatsApp (digits only, e.g. 6289638109924)', widget: string, pattern: ['^[0-9]{9,15}$', 'Digits only, with country code'] }
+          - { name: github, label: GitHub URL, widget: string }
+          - { name: linkedin, label: LinkedIn URL, widget: string }
+          - { name: portraitImage, label: Portrait photo, widget: image }
+          - { name: educationD3, label: Education (D3), widget: string }
+          - { name: educationS1, label: Education (S1), widget: string }
+          - { name: focus, label: Focus areas, widget: list }
+          - { name: languages, label: Languages, widget: list }
+
+      - name: projects
+        label: Projects
+        file: src/content/projects.json
+        fields:
+          - name: projects
+            label: Projects (first one marked Featured becomes the big card)
+            widget: list
+            summary: '{{fields.title}} — {{fields.year}}'
+            fields:
+              - { name: id, label: 'ID (lowercase-with-dashes)', widget: string }
+              - { name: title, label: Title, widget: string }
+              - { name: category, label: Category, widget: select, options: [{ label: 'Web3 & Tooling', value: web3 }, { label: Web, value: web }, { label: Full-Stack, value: fullstack }] }
+              - { name: year, label: Year, widget: string }
+              - { name: featured, label: Featured, widget: boolean, default: false }
+              - { name: event, label: 'Event / hackathon (optional)', widget: string, required: false }
+              - { name: role, label: 'Your role (optional)', widget: string, required: false }
+              - { name: description, label: Short description, widget: text }
+              - { name: longDescription, label: Case study text, widget: text, required: false }
+              - { name: highlights, label: Highlights, widget: list, required: false }
+              - { name: image, label: 'Cover screenshot (leave empty for a text cover)', widget: image, required: false }
+              - { name: gallery, label: Extra screenshots, widget: list, field: { name: src, label: Image, widget: image }, required: false }
+              - { name: tags, label: Tech stack, widget: list }
+              - { name: demoUrl, label: Live demo URL, widget: string, required: false }
+              - { name: githubUrl, label: Repository URL, widget: string, required: false }
+              - { name: extraUrl, label: 'Extra link URL (e.g. DoraHacks)', widget: string, required: false }
+              - { name: extraLabel, label: Extra link label, widget: string, required: false }
+
+      - name: certificates
+        label: Certificates
+        file: src/content/certificates.json
+        fields:
+          - name: certificates
+            label: Certificates (section appears on the site once you add one)
+            widget: list
+            summary: '{{fields.title}} — {{fields.issuer}}'
+            fields:
+              - { name: title, label: Certificate name, widget: string }
+              - { name: issuer, label: Issuer, widget: string }
+              - { name: date, label: 'Date (e.g. Mar 2025)', widget: string }
+              - { name: image, label: Certificate image, widget: image, required: false }
+              - { name: credentialUrl, label: Verification URL, widget: string, required: false }
+              - { name: credentialId, label: Credential ID, widget: string, required: false }

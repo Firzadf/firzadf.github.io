@@ -3,13 +3,12 @@
 import React from 'react';
 import Link from 'next/link';
 import { ProjectProvider } from '@/context/ProjectContext';
-import { LoadingScreen } from '@/components/LoadingScreen';
-import { CosmicCursor } from '@/components/CosmicCursor';
 import { CosmicBackground } from '@/components/CosmicBackground';
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
 import { ProjectGrid } from '@/components/ProjectGrid';
 import { AboutEducation } from '@/components/AboutEducation';
+import { Certificates } from '@/components/Certificates';
 import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
 import { PageTransition } from '@/components/PageTransition';
@@ -18,12 +17,10 @@ import { ArrowRight } from 'lucide-react';
 export default function Home() {
   return (
     <ProjectProvider>
-      <LoadingScreen />
       <div className="relative min-h-screen bg-[#0B0D10] text-white selection:bg-[#AEA8FE] selection:text-[#0B0D10] overflow-x-hidden">
         <CosmicBackground />
-        <CosmicCursor />
         <Header />
-        <main className="relative z-10">
+        <main id="main" className="relative z-10">
           <PageTransition>
             <Hero />
             <ProjectGrid />
@@ -40,6 +37,7 @@ export default function Home() {
             </div>
 
             <AboutEducation />
+            <Certificates />
             <Contact />
           </PageTransition>
         </main>
