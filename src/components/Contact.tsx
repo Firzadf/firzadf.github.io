@@ -87,8 +87,8 @@ export const Contact: React.FC = () => {
             <Linkedin className="w-6 h-6 text-blue-400" />
             <ArrowUpRight className="w-4 h-4 text-gray-500 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
           </div>
-          <span className="text-xs uppercase tracking-widest text-gray-400 block mb-1">LinkedIn Network</span>
-          <span className="text-lg font-serif text-white block truncate">{prettyUrl(personalInfo.linkedin)}</span>
+          <span className="text-xs uppercase tracking-widest text-gray-400 block mb-1">LinkedIn</span>
+          <span className="text-lg font-serif text-white block truncate">Firza Duta Fauzan</span>
         </a>
       </div>
     </section>

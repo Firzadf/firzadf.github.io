@@ -35,7 +35,7 @@ const jsonLd = {
   url: SITE,
   address: { '@type': 'PostalAddress', addressLocality: 'Bogor', addressCountry: 'ID' },
   alumniOf: 'Universitas Bina Sarana Informatika',
-  sameAs: ['https://github.com/Firzadf'],
+  sameAs: ['https://github.com/Firzadf', 'https://www.linkedin.com/in/firza-duta-fauzan-6b6a86213/'],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
