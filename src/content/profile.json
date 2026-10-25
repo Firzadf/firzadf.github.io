@@ -3,7 +3,7 @@
   "title": "Software Engineer & Web Developer",
   "location": "Bogor, Indonesia",
   "status": "Open for Full-time & Freelance Roles",
-  "bio": "Software engineer from Bogor building full-stack web apps and Web3 developer tooling. Information Systems undergraduate at UBSI, with hands-on work shipping internal systems for real companies. I like products that are honest, fast, and easy to verify.",
+  "bio": "Software engineer from Bogor building full-stack web apps and Web3 developer tooling. D3 Information Systems graduate (2026), continuing my bachelor's at UBSI, with hands-on work shipping internal systems for real companies. I like products that are honest, fast, and easy to verify.",
   "email": "firzamz231@gmail.com",
   "github": "https://github.com/Firzadf",
   "linkedin": "https://www.linkedin.com/in/firza-duta-fauzan-6b6a86213/",
@@ -25,6 +25,12 @@
       "school": "Universitas Bina Sarana Informatika (UBSI)",
       "period": "Expected 2027",
       "current": true
+    },
+    {
+      "degree": "D3 Information Systems",
+      "school": "Universitas Bina Sarana Informatika (UBSI)",
+      "period": "Graduated 2026",
+      "current": false
     },
     {
       "degree": "Software Engineering (RPL), Vocational High School",
