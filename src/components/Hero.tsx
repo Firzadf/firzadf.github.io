@@ -48,6 +48,16 @@ export const Hero: React.FC = () => {
               >
                 Contact me
               </a>
+              {personalInfo.cvUrl && (
+                <a
+                  href={personalInfo.cvUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-12 items-center gap-2 rounded-full px-4 text-sm font-semibold text-gray-300 underline-offset-4 transition hover:text-white hover:underline"
+                >
+                  Download CV ↓
+                </a>
+              )}
             </div>
           </motion.div>
 

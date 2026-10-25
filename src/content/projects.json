@@ -36,6 +36,50 @@
       "extraLabel": "DoraHacks"
     },
     {
+      "id": "absensi-clc",
+      "title": "CLC Attendance System",
+      "category": "fullstack",
+      "year": "2025",
+      "featured": false,
+      "description": "Web-based employee attendance for PT Chemitech Logilab Conscientia. Check-in and check-out require a face photo and a GPS position inside the office radius, with off-site attendance, leave requests, and attendance recaps.",
+      "longDescription": "An internal attendance app I built for PT Chemitech Logilab Conscientia, live on the company domain. Employees clock in and out from the browser: the app captures a face photo and checks the device's GPS position against a set radius around the office, so attendance can only be recorded on site. Staff working elsewhere use a separate off-site attendance flow. The employee dashboard also handles leave and permission requests, request history, and a personal attendance recap. Built with native PHP and MySQL, using the Tabler (Bootstrap) admin UI and SweetAlert2.",
+      "image": "/images/projects/absensi-clc.jpg",
+      "tags": [
+        "PHP Native",
+        "MySQL",
+        "Tabler",
+        "Bootstrap",
+        "Geolocation API",
+        "Face photo capture",
+        "SweetAlert2"
+      ],
+      "demoUrl": "https://absensi-clc.chemitechlogilab.com/auth/login.php",
+      "githubUrl": "",
+      "role": "IT & Design Intern",
+      "gallery": [
+        "/images/projects/absensi-clc-login.jpg"
+      ]
+    },
+    {
+      "id": "chemitech-website",
+      "title": "Chemitech Logilab — Company Website",
+      "category": "web",
+      "year": "2025",
+      "featured": false,
+      "description": "Managed and updated the company website and product catalogue of PT Chemitech Logilab Conscientia, a Bogor-based laboratory equipment supplier.",
+      "longDescription": "I managed the website of PT Chemitech Logilab Conscientia, a laboratory equipment, calibration, and training supplier in Bogor. The site is a WordPress and WooCommerce catalogue covering dozens of product categories and brands such as Thermo Scientific, Horiba, and Daihan Labtech. During my internship (Jul to Dec 2025) I handled the full website administration: database migrations, content and product updates, e-commerce improvements, and the banners and marketing visuals used on the site.",
+      "image": "/images/projects/chemitech.jpg",
+      "tags": [
+        "WordPress",
+        "WooCommerce",
+        "Content management",
+        "Website maintenance"
+      ],
+      "demoUrl": "https://chemitechlogilab.com/",
+      "githubUrl": "",
+      "role": "IT & Design Intern"
+    },
+    {
       "id": "koloni-cafe-website",
       "title": "Koloni Cafe — Website",
       "category": "web",

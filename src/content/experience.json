@@ -1,0 +1,29 @@
+{
+  "experience": [
+    {
+      "role": "IT & Design Staff (Internship)",
+      "company": "PT Chemitech Logilab Conscientia",
+      "period": "Jul 2025 – Dec 2025",
+      "summary": "Built a web attendance system with real-time camera capture and GPS radius validation for internal staff. Ran the company website end to end: administration, database migrations, content updates, and e-commerce improvements. Designed calendars, product flyers, brochures, and displays for lab equipment.",
+      "link": "https://chemitechlogilab.com/"
+    },
+    {
+      "role": "Freelance Graphic Designer",
+      "company": "Self-employed",
+      "period": "Jan 2023 – Present",
+      "summary": "Custom visual assets, catalogs, banners, and promotional flyers tailored to each client's brand guidelines."
+    },
+    {
+      "role": "Warehouse & IT Staff",
+      "company": "PT Sains Analitika Prima",
+      "period": "Jan 2022 – Jan 2023",
+      "summary": "Handled warehouse logistics for imported lab equipment, kept the company website's product data clean with daily CRUD updates, and administered its Tokopedia and E-Katalog storefronts."
+    },
+    {
+      "role": "IT & Administration Intern",
+      "company": "IPB University",
+      "period": "May 2020 – Jan 2021",
+      "summary": "Verified and batch-entered student data in Excel, and supported the IT team with design revisions and departmental website updates."
+    }
+  ]
+}

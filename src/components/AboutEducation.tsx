@@ -2,7 +2,11 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import profile from '@/content/profile.json';
 import { GraduationCap, Award, BookOpen, Sparkles, Code2, Server, Layout, Boxes } from 'lucide-react';
+
+type Edu = { degree: string; school: string; period: string; current?: boolean };
+const education: Edu[] = (profile as { education?: Edu[] }).education || [];
 
 export const AboutEducation: React.FC = () => {
   return (
@@ -96,59 +100,34 @@ export const AboutEducation: React.FC = () => {
             <div>
               <span className="label-mono block">Education</span>
               <h3 className="text-2xl font-serif font-light text-white">
-                Universitas Bina Sarana Informatika
+                Studies
               </h3>
             </div>
           </div>
 
           <div className="relative border-l border-white/15 pl-6 space-y-10 ml-4">
-
-            {/* S1 Degree */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.05 }}
-              transition={{ duration: 0.5 }}
-              className="relative group"
-            >
-              <div className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-[#0b0d10] border-2 border-emerald-400 group-hover:scale-125 transition-transform" />
-              <div className="flex items-center gap-3 mb-1">
-                <span className="px-3 py-0.5 rounded-full text-[10px] font-mono uppercase tracking-wider bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                  Currently Pursuing
-                </span>
-                <span className="text-xs font-mono text-gray-500">2024 — Present</span>
-              </div>
-              <h4 className="text-lg font-medium text-white group-hover:text-purple-300 transition-colors">
-                S1 Information Technology
-              </h4>
-              <p className="text-xs text-gray-400 mt-1 font-sans">
-                UBSI Bogor • Advanced Software Engineering, Cloud Architecture &amp; Database Systems
-              </p>
-            </motion.div>
-
-            {/* D3 Degree */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.05 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="relative group"
-            >
-              <div className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-[#0b0d10] border-2 border-purple-400 group-hover:scale-125 transition-transform" />
-              <div className="flex items-center gap-3 mb-1">
-                <span className="px-3 py-0.5 rounded-full text-[10px] font-mono uppercase tracking-wider bg-purple-500/20 text-purple-300 border border-purple-500/30">
-                  Graduate Alumni
-                </span>
-                <span className="text-xs font-mono text-gray-500">Graduated 2024</span>
-              </div>
-              <h4 className="text-lg font-medium text-white group-hover:text-purple-300 transition-colors">
-                D3 Information Systems
-              </h4>
-              <p className="text-xs text-gray-400 mt-1 font-sans">
-                UBSI Bogor • Web Development, Relational Databases &amp; System Analysis
-              </p>
-            </motion.div>
-
+            {education.map((e, i) => (
+              <motion.div
+                key={e.degree}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.05 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="relative group"
+              >
+                <div className={`absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-[#0b0d10] border-2 ${e.current ? 'border-emerald-400' : 'border-purple-400'}`} />
+                <div className="flex items-center gap-3 mb-1">
+                  {e.current && (
+                    <span className="px-3 py-0.5 rounded-full text-[10px] font-mono uppercase tracking-wider bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                      Currently Studying
+                    </span>
+                  )}
+                  <span className="text-xs font-mono text-gray-400">{e.period}</span>
+                </div>
+                <h4 className="text-lg font-medium text-white">{e.degree}</h4>
+                <p className="text-xs text-gray-400 mt-1 font-sans">{e.school}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
 
@@ -188,8 +167,8 @@ export const AboutEducation: React.FC = () => {
                 <Server className="w-4 h-4 text-emerald-400" />
                 <h4 className="text-sm font-semibold text-white">Backend &amp; Databases</h4>
               </div>
-              <p className="text-[13px] text-gray-400 leading-relaxed font-sans">Laravel, PHP, MySQL, auth and admin dashboards with full CRUD.</p>
-              <p className="mt-2 text-[11px] font-mono text-gray-500">Proof: Posyandu Dashboard</p>
+              <p className="text-[13px] text-gray-400 leading-relaxed font-sans">Laravel, native PHP, MySQL, auth, admin dashboards, and internal company systems.</p>
+              <p className="mt-2 text-[11px] font-mono text-gray-500">Proof: CLC Attendance System · Posyandu Dashboard</p>
             </div>
             <div className="p-5 rounded-2xl border border-white/10 bg-[#13161c]/80 hover:border-purple-500/30 transition-colors">
               <div className="flex items-center gap-3 mb-2">

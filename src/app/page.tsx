@@ -8,6 +8,7 @@ import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
 import { ProjectGrid } from '@/components/ProjectGrid';
 import { AboutEducation } from '@/components/AboutEducation';
+import { Experience } from '@/components/Experience';
 import { Certificates } from '@/components/Certificates';
 import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
@@ -36,6 +37,7 @@ export default function Home() {
               </Link>
             </div>
 
+            <Experience />
             <AboutEducation />
             <Certificates />
             <Contact />

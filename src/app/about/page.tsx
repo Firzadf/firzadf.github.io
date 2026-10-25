@@ -7,6 +7,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { PageTransition } from '@/components/PageTransition';
 import { AboutEducation } from '@/components/AboutEducation';
+import { Experience } from '@/components/Experience';
 import { Certificates } from '@/components/Certificates';
 import { Code2, Cpu, FileCode2, Layers, CheckCircle2, Sparkles, Terminal, Flame, Zap } from 'lucide-react';
 
@@ -114,11 +115,14 @@ function AboutContent() {
                   'HTML5 & CSS3',
                   'PHP / Laravel',
                   'MySQL',
+                  'CodeIgniter',
+                  'WordPress & WooCommerce',
                   'REST / JSON-RPC',
                   'Solidity & EVM',
                   'Substrate / WebSocket',
                   'Vitest',
                   'Figma UI/UX',
+                  'Adobe Illustrator & Canva',
                   'Git & GitHub',
                 ].map((stack, sIdx) => (
                   <span
@@ -134,6 +138,7 @@ function AboutContent() {
           </section>
 
           {/* Academic Background Component */}
+          <Experience />
           <AboutEducation />
           <Certificates />
         </PageTransition>

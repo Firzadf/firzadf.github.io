@@ -24,8 +24,8 @@ export interface PersonalInfo {
   name: string;
   title: string;
   location: string;
-  educationD3: string;
-  educationS1: string;
+  education?: { degree: string; school: string; period: string; current?: boolean }[];
+  cvUrl?: string;
   status: string;
   email: string;
   whatsapp: string;

@@ -1,3 +1,14 @@
 {
-  "certificates": []
+  "certificates": [
+    {
+      "title": "Database Programming with SQL",
+      "issuer": "Oracle Academy",
+      "date": "Jun 2024"
+    },
+    {
+      "title": "Database Design",
+      "issuer": "Oracle Academy",
+      "date": "May 2024"
+    }
+  ]
 }

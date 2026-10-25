@@ -34,8 +34,16 @@ collections:
           - { name: github, label: GitHub URL, widget: string }
           - { name: linkedin, label: LinkedIn URL, widget: string }
           - { name: portraitImage, label: Portrait photo, widget: image }
-          - { name: educationD3, label: Education (D3), widget: string }
-          - { name: educationS1, label: Education (S1), widget: string }
+          - { name: cvUrl, label: 'CV (PDF)', widget: file, required: false }
+          - name: education
+            label: Education
+            widget: list
+            summary: '{{fields.degree}} — {{fields.period}}'
+            fields:
+              - { name: degree, label: Degree / program, widget: string }
+              - { name: school, label: School, widget: string }
+              - { name: period, label: 'Period (e.g. Expected 2027)', widget: string }
+              - { name: current, label: Currently studying, widget: boolean, default: false }
           - { name: focus, label: Focus areas, widget: list }
           - { name: languages, label: Languages, widget: list }
 
@@ -65,6 +73,21 @@ collections:
               - { name: githubUrl, label: Repository URL, widget: string, required: false }
               - { name: extraUrl, label: 'Extra link URL (e.g. DoraHacks)', widget: string, required: false }
               - { name: extraLabel, label: Extra link label, widget: string, required: false }
+
+      - name: experience
+        label: Work experience
+        file: src/content/experience.json
+        fields:
+          - name: experience
+            label: Jobs (newest first)
+            widget: list
+            summary: '{{fields.role}} — {{fields.company}}'
+            fields:
+              - { name: role, label: Role, widget: string }
+              - { name: company, label: Company, widget: string }
+              - { name: period, label: 'Period (e.g. Jul 2025 – Dec 2025)', widget: string }
+              - { name: summary, label: What you did, widget: text }
+              - { name: link, label: Company website (optional), widget: string, required: false }
 
       - name: certificates
         label: Certificates
